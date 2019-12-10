@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://xmlns.jcp.org/jsf/core">
+  
+  <h:head>
+    <title>Manage Products</title>
+  </h:head>
+  
+  <f:metadata>
+  <f:event type="preRenderView" 
+      listener="#{storesController.loadStores()}"/>
+  </f:metadata>
+  
+   <h:outputStylesheet library="css" name="tables.css"/>
+  
+  <h:body>
+
+  	<h:form>
+  	 <h:dataTable value="#{storesController.store}" var="s"
+  	 	headerClass="table-header"
+			rowClasses="table-odd-row,table-even-row">
+			
+	<button onclick="myFunction()">Add Store</button>
+	<h3>Store/Products Details</h3>
+			
+		<!-- first column -->
+  	 	<h:column>
+ 	  		<f:facet name="header">Store ID</f:facet>
+ 	  		#{s.id}
+		</h:column>
+		
+		<!-- second column -->
+		<h:column>
+ 	  		<f:facet name="header">Store Name</f:facet>
+ 	  		#{s.name}
+		</h:column>
+		
+		<!-- third column -->
+		<h:column>
+ 	  		<f:facet name="header">Founded</f:facet>
+ 	  		#{s.founded}
+		</h:column>
+		
+		<!-- fourth column -->
+		<h:column>
+ 	  		<f:facet name="header">Product ID</f:facet>
+ 	  		#{s.productID}
+		</h:column>
+		
+		<!-- fifth column -->
+		<h:column>
+ 	  		<f:facet name="header">Product Name</f:facet>
+ 	  		#{s.productName}
+		</h:column>
+		
+		<!-- third column -->
+		<h:column>
+ 	  		<f:facet name="header">Price</f:facet>
+ 	  		#{s.price}
+		</h:column>
+		
+		
+		
+  	</h:dataTable>
+  	<h:commandLink value="Main Page" action="MainPage"></h:commandLink>
+  	
+
+  	</h:form>	
+  </h:body>
+</html>

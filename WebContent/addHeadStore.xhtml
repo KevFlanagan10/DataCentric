@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://xmlns.jcp.org/jsf/core">
+  
+  <h:head>
+    <title>Add Head Store</title>
+  </h:head>
+  
+  <f:metadata>
+  <f:event type="preRenderView" 
+      listener="#{productController.loadProducts()}"/>
+  </f:metadata>
+   <h:outputStylesheet library="css" name="tables.css"/>
+  
+  <h:body>
+  <h:commandButton value="Add Head Store" action="#{productController.addStore(product)}"/>
+  	<h:form>
+  	 <h:dataTable value="#{productController.products}" var="p"
+  	 	headerClass="table-header"
+			rowClasses="table-odd-row,table-even-row">
+			
+	<button onclick="myFunction()">Add Head Store</button>
+			
+		<!-- first column -->
+  	 	<h:column>
+ 	  		<f:facet name="header">Store ID</f:facet>
+ 	  		#{p.prodID}
+		</h:column>
+		
+		<!-- second column -->
+		<h:column>
+ 	  		<f:facet name="header">Store Name</f:facet>
+ 	  		#{p.desc}
+		</h:column>
+		
+  	</h:dataTable>
+  	<h:commandLink value="Home Page" action="MainPage"></h:commandLink>
+  	
+  <!-- <p>#{productController.products[0].prodID} #{productController.products[0].desc}</p>
+  	<p>#{productController.products[1].prodID} #{productController.products[1].desc}</p>
+  	<p>#{productController.products[2].prodID} #{productController.products[2].desc}</p> -->
+  	</h:form>	
+  </h:body>
+</html>
