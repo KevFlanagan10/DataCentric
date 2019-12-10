@@ -5,9 +5,7 @@ import javax.annotation.ManagedBean;
 @ManagedBean
 public class HeadOffice {
 	int id;
-	String name;
-	String founded;
-	
+	String location;
 	
 	public int getId() {
 		return id;
@@ -15,34 +13,11 @@ public class HeadOffice {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	public String getName() {
-		return name;
+	public String getLocation() {
+		return location;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setLocation(String location) {
+		this.location = location;
 	}
-	
-	public String getFounded() {
-		return founded;
-	}
-	public void setFounded(String founded) {
-		this.founded = founded;
-	}
-//==============================================================
-	public String getProductName() {
-		return productName;
-	}
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-	
-	public String getPrice() {
-		return price;
-	}
-	public void setPrice(String price) {
-		this.price = price;
-	}
-
 	
 }

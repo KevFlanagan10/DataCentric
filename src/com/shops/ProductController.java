@@ -40,7 +40,6 @@ public class ProductController {
 	}
 	
 	public String addProduct(Product p) {
-		System.out.println(p.getProdID() + " " + p.getDesc());
 		try {
 			dao.addProduct(p);
 			return "index";
@@ -62,15 +61,15 @@ public class ProductController {
 		return null;
 	}
 	//delete button
-	public void delete(int pid) {
-		System.out.println(pid);
-		try {
-			dao.delete(pid);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	public void delete(int pid) {
+//		System.out.println(pid);
+//		try {
+//			dao.delete(pid);
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 
 	public ArrayList<Product> getProducts() {
 		return products;
